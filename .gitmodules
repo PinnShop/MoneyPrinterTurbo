@@ -1,0 +1,3 @@
+[submodule "moviepy"]
+	path = moviepy
+	url = https://github.com/PinnShop/moviepy
