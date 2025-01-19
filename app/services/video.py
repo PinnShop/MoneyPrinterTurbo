@@ -259,6 +259,7 @@ def generate_video(
             bg_color=params.text_background_color,
             stroke_color=params.stroke_color,
             stroke_width=params.stroke_width,
+            margin=(params.font_size * 0.1, params.font_size * 0.1),
         )
         duration = subtitle_item[0][1] - subtitle_item[0][0]
         _clip = _clip.with_start(subtitle_item[0][0])

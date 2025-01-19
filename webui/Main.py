@@ -457,7 +457,7 @@ with left_panel:
         ):
             with st.spinner(tr("Generating Video Script and Keywords")):
                 script = llm.generate_script(
-                    video_subject=params.video_subject, language=params.video_language
+                    video_subject=params.video_subject, language=params.video_language, paragraph_number=3
                 )
                 terms = llm.generate_terms(params.video_subject, script)
                 if "Error: " in script:

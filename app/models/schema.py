@@ -166,13 +166,13 @@ class AudioRequest(BaseModel):
 class VideoScriptParams:
     """
     {
-      "video_subject": "春天的花海",
-      "video_language": "",
+      "video_subject": "การทำความดี",
+      "video_language": "th-TH",
       "paragraph_number": 1
     }
     """
 
-    video_subject: Optional[str] = "春天的花海"
+    video_subject: Optional[str] = "การทำความดี"
     video_language: Optional[str] = ""
     paragraph_number: Optional[int] = 1
 
@@ -186,9 +186,9 @@ class VideoTermsParams:
     }
     """
 
-    video_subject: Optional[str] = "春天的花海"
+    video_subject: Optional[str] = "การทำความดี"
     video_script: Optional[str] = (
-        "春天的花海，如诗如画般展现在眼前。万物复苏的季节里，大地披上了一袭绚丽多彩的盛装。金黄的迎春、粉嫩的樱花、洁白的梨花、艳丽的郁金香……"
+        "การทำความดีไม่จำเป็นต้องเป็นเรื่องใหญ่โตหรือต้องใช้เงินทองมากมาย เพียงแค่การยิ้มให้กับผู้อื่นหรือการช่วยเหลือผู้สูงอายุข้ามถนนก็เป็นการทำความดีที่สร้างคุณค่าให้กับสังคมได้..."
     )
     amount: Optional[int] = 5
 
@@ -282,7 +282,7 @@ class VideoScriptResponse(BaseResponse):
                 "status": 200,
                 "message": "success",
                 "data": {
-                    "video_script": "春天的花海，是大自然的一幅美丽画卷。在这个季节里，大地复苏，万物生长，花朵争相绽放，形成了一片五彩斑斓的花海..."
+                    "video_script": "การทำความดีไม่จำเป็นต้องเป็นเรื่องใหญ่โตหรือต้องใช้เงินทองมากมาย เพียงแค่การยิ้มให้กับผู้อื่นหรือการช่วยเหลือผู้สูงอายุข้ามถนนก็เป็นการทำความดีที่สร้างคุณค่าให้กับสังคมได้..."
                 },
             },
         }
@@ -294,7 +294,7 @@ class VideoTermsResponse(BaseResponse):
             "example": {
                 "status": 200,
                 "message": "success",
-                "data": {"video_terms": ["sky", "tree"]},
+                "data": {"video_terms": ["acts of kindness", "community kindness", "helping elderly", "small good deeds", "impact of kindness"]},
             },
         }
 

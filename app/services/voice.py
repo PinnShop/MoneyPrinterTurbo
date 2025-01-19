@@ -1244,8 +1244,10 @@ def create_subtitle(sub_maker: submaker.SubMaker, text: str, subtitle_file: str)
         if _sub_line == _line:
             return script_lines[_sub_index].strip()
 
-        _sub_line_ = re.sub(r"[^\w\s]", "", _sub_line)
-        _line_ = re.sub(r"[^\w\s]", "", _line)
+        #_sub_line_ = re.sub(r"[^\w\s]", "", _sub_line) # Jimmy - it cause Thai characters to be removed
+        #_line_ = re.sub(r"[^\w\s]", "", _line)
+        _sub_line_ = re.sub(r"[^A-Za-z0-9\u0E00-\u0E7F\s]", "", _sub_line)
+        _line_     = re.sub(r"[^A-Za-z0-9\u0E00-\u0E7F\s]", "", _line)
         if _sub_line_ == _line_:
             return _line_.strip()
 

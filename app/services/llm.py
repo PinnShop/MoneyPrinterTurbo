@@ -254,7 +254,7 @@ def _generate_response(prompt: str) -> str:
                     f"[{llm_provider}] returned an empty response, please check your network connection and try again."
                 )
 
-        return content.replace("\n", "")
+        return content #.replace("\n", "") # Jimmy: I think we should keep the newlines
     except Exception as e:
         return f"Error: {str(e)}"
 
@@ -277,6 +277,11 @@ Generate a script for a video, depending on the subject of the video.
 6. do not include "voiceover", "narrator" or similar indicators of what should be spoken at the beginning of each paragraph or line.
 7. you must not mention the prompt, or anything about the script itself. also, never talk about the amount of paragraphs or lines. just write the script.
 8. respond in the same language as the video subject.
+9. separate sentenses with a new line, and each sentence should not exceed 100 characters.
+10. separate paragraphs with two new lines.
+
+It's important to separate sentences with a new line, and each sentence should not exceed 150 characters.
+It's also important to separate paragraphs with two new lines.
 
 # Initialization:
 - video subject: {video_subject}
@@ -398,9 +403,9 @@ Please note that you must use English for generating video search terms; Chinese
 
 
 if __name__ == "__main__":
-    video_subject = "生命的意义是什么"
+    video_subject = "การทำความดี"
     script = generate_script(
-        video_subject=video_subject, language="zh-CN", paragraph_number=1
+        video_subject=video_subject, language="th-TH", paragraph_number=1
     )
     print("######################")
     print(script)
