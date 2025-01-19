@@ -2,6 +2,7 @@ import glob
 import os
 import random
 from typing import List
+from pythainlp import word_tokenize
 
 from loguru import logger
 from moviepy import (
@@ -170,11 +171,12 @@ def wrap_text(text, max_width, font="Arial", fontsize=60):
     processed = True
 
     _wrapped_lines_ = []
-    words = text.split(" ")
+    #words = text.split(" ")
+    words = word_tokenize(text, engine='newmm') # Jimmy - use pythainlp to tokenize Thai text
     _txt_ = ""
     for word in words:
         _before = _txt_
-        _txt_ += f"{word} "
+        _txt_ += f"{word}"
         _width, _height = get_text_size(_txt_)
         if _width <= max_width:
             continue
@@ -183,7 +185,7 @@ def wrap_text(text, max_width, font="Arial", fontsize=60):
                 processed = False
                 break
             _wrapped_lines_.append(_before)
-            _txt_ = f"{word} "
+            _txt_ = f"{word}"
     _wrapped_lines_.append(_txt_)
     if processed:
         _wrapped_lines_ = [line.strip() for line in _wrapped_lines_]

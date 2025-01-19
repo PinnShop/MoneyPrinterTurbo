@@ -43,13 +43,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.title(f"MoneyPrinterTurbo v{config.project_version}")
 
 support_locales = [
-    "zh-CN",
-    "zh-HK",
-    "zh-TW",
-    "de-DE",
     "en-US",
-    "fr-FR",
-    "vi-VN",
     "th-TH",
 ]
 
@@ -448,7 +442,7 @@ with left_panel:
 
         selected_index = st.selectbox(
             tr("Script Language"),
-            index=0,
+            index=2,    # Jimmy - default language to Thai
             options=range(
                 len(video_languages)
             ),  # Use the index as the internal option value

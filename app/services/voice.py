@@ -17,7 +17,7 @@ from app.utils import utils
 
 def get_all_azure_voices(filter_locals=None) -> list[str]:
     if filter_locals is None:
-        filter_locals = ["zh-CN", "en-US", "zh-HK", "zh-TW", "vi-VN"]
+        filter_locals = ["en-US", "th-TH"] # Jimmy - add Thai
     voices_str = """
 Name: af-ZA-AdriNeural
 Gender: Female
@@ -1310,7 +1310,8 @@ def get_audio_duration(sub_maker: submaker.SubMaker):
 
 
 if __name__ == "__main__":
-    voice_name = "zh-CN-XiaoxiaoMultilingualNeural-V2-Female"
+    #voice_name = "zh-CN-XiaoxiaoMultilingualNeural-V2-Female"
+    voice_name = "th-TH-PremwadeeNeural-Female"  # Jimmy - default voice in Thai
     voice_name = parse_voice_name(voice_name)
     voice_name = is_azure_v2_voice(voice_name)
     print(voice_name)
